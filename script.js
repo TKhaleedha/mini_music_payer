@@ -1,5 +1,5 @@
 const songs = ['song1.mp3', 'song2.mp3', 'song3.mp3'];
-const titles = ['Devara Thandavam', 'Saripodha Sanivaram', 'Night Vibes'];
+const titles = ['Devara Thandavam', 'Saripodha Sanivaram', 'Nee Singam Dhaan'];
 const covers = ['song1.jpg', 'song2.jpg', 'song3.jpg'];
 
 let songIndex = 0;
@@ -20,6 +20,7 @@ const progressContainer = document.querySelector('.progress-container');
 const timer = document.getElementById('timer');
 const songItems = document.getElementById('songItems');
 const mostPlayedList = document.getElementById('mostPlayedList');
+const volumeLevel = document.getElementById('volume-level');
 
 function loadSong(index) {
   title.innerText = titles[index];
@@ -75,12 +76,19 @@ audio.addEventListener('ended', () => {
   if (!isLooping) nextBtn.click();
 });
 
+function updateVolumeDisplay() {
+  const percent = Math.round(audio.volume * 100);
+  volumeLevel.textContent = `Volume: ${percent}%`;
+}
+
 volUp.addEventListener('click', () => {
   audio.volume = Math.min(1, audio.volume + 0.1);
+  updateVolumeDisplay();
 });
 
 volDown.addEventListener('click', () => {
   audio.volume = Math.max(0, audio.volume - 0.1);
+  updateVolumeDisplay();
 });
 
 loopBtn.addEventListener('click', () => {
@@ -130,7 +138,8 @@ function updateMostPlayed() {
   });
 }
 
-// Init
+// Initialize player
 loadSong(songIndex);
 displayAllSongs();
 updateMostPlayed();
+updateVolumeDisplay(); // show current volume at startup
