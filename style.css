@@ -15,8 +15,9 @@ body {
   flex-wrap: wrap;
 }
 
+/* Shared Box Styles */
 .song-list, .most-played {
-  width: 250px;
+  width: 280px;
   background: #111827;
   padding: 20px;
   border-radius: 15px;
@@ -33,7 +34,7 @@ body {
 .song-list ul, .most-played ul {
   list-style: none;
   padding: 0;
-  margin: 10px 0 0;
+  margin-top: 10px;
 }
 
 .song-list li, .most-played li {
@@ -45,14 +46,14 @@ body {
   transition: 0.3s;
   cursor: pointer;
 }
-
 .song-list li:hover, .most-played li:hover {
   background-color: #374151;
 }
 
+/* Player */
 .player-container {
   flex: 1;
-  max-width: 400px;
+  max-width: 520px;
   background-color: #111827;
   padding: 25px;
   border-radius: 20px;
@@ -61,8 +62,8 @@ body {
 }
 
 #cover {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   object-fit: cover;
   border-radius: 50%;
   margin: 0 auto 15px;
@@ -70,7 +71,7 @@ body {
 }
 
 #title {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 8px;
 }
 
@@ -81,15 +82,15 @@ body {
 
 #volume-level {
   font-size: 14px;
+  margin-bottom: 15px;
   color: #ccc;
-  margin-bottom: 10px;
 }
 
 .controls-row {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin: 10px 0;
+  margin-bottom: 15px;
   flex-wrap: wrap;
 }
 
@@ -123,61 +124,76 @@ body {
   border-radius: 10px;
 }
 
-/* 📱 Mobile Responsive */
-@media (max-width: 360px) {
+/* Responsive Layouts */
+
+/* Large screens */
+@media (min-width: 1200px) {
   .main-container {
-    padding: 10px;
+    max-width: 1400px;
+    margin: auto;
+    padding: 50px;
+    gap: 40px;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .main-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .song-list, .most-played {
+    width: 260px;
+  }
+
+  .player-container {
+    max-width: 480px;
   }
 
   #cover {
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 767px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
 
-  .controls-row button {
-    font-size: 16px;
-    padding: 8px;
+  .player-container,
+  .song-list,
+  .most-played {
+    width: 100%;
+    max-width: 95%;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  #cover {
+    width: 180px;
+    height: 180px;
   }
 
   #title {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   #timer, #volume-level {
-    font-size: 12px;
-  }
-}
-@media (min-width: 361px) and (max-width: 420px) {
-  #cover {
-    width: 160px;
-    height: 160px;
+    font-size: 13px;
   }
 
   .controls-row button {
-    font-size: 17px;
+    font-size: 18px;
     padding: 10px;
-  }
-
-  #title {
-    font-size: 17px;
   }
 
   .progress-container {
     height: 8px;
-  }
-}
-@media (min-width: 421px) and (max-width: 480px) {
-  #cover {
-    width: 170px;
-    height: 170px;
-  }
-
-  .controls-row button {
-    font-size: 18px;
-    padding: 12px;
-  }
-
-  #title {
-    font-size: 18px;
   }
 }
