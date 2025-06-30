@@ -8,18 +8,19 @@
 <body>
   <div class="main-container">
     
-    <!-- Left: All Songs -->
+    <!-- 🎵 Left: All Songs -->
     <div class="song-list">
       <h3>🎵 All Songs</h3>
       <ul id="songItems"></ul>
     </div>
 
-    <!-- Center: Player -->
+    <!-- 🎧 Center: Player -->
     <div class="player-container">
       <h2 id="title">Song Title</h2>
       <img id="cover" src="images/song1.jpg" alt="Cover Image" />
       <audio id="audio" src="songs/song1.mp3"></audio>
       <div id="timer">00:00 / 00:00</div>
+      <div id="volume-level">Volume: 100%</div>
 
       <!-- Controls: Play / Next / Prev / Loop -->
       <div class="controls-row">
@@ -35,12 +36,13 @@
         <button id="vol-up">🔊</button>
       </div>
 
+      <!-- Progress -->
       <div class="progress-container">
         <div class="progress" id="progress"></div>
       </div>
     </div>
 
-    <!-- Right: Most Played -->
+    <!-- 📊 Right: Most Played -->
     <div class="most-played">
       <h3>🎧 Most Played Songs</h3>
       <ul id="mostPlayedList"></ul>
