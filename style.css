@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0b1120;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.song-list, .most-played {
+  width: 250px;
+  background: #111827;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #00000060;
+}
+
+.song-list h3, .most-played h3 {
+  margin-top: 0;
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.song-list ul, .most-played ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.song-list li, .most-played li {
+  background-color: #1f2937;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.song-list li:hover, .most-played li:hover {
+  background-color: #374151;
+}
+
+.player-container {
+  flex: 1;
+  max-width: 400px;
+  background-color: #111827;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px #00000060;
+}
+
+#cover {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  box-shadow: 0 0 15px #000;
+}
+
+#title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+#timer {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.controls-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.controls-row button {
+  background-color: #16a085;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls-row button:hover {
+  background-color: #1abc9c;
+}
+
+.volume-row {
+  margin-top: 0;
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: #555;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.progress {
+  background-color: #1abc9c;
+  height: 10px;
+  width: 0%;
+  border-radius: 10px;
+}
+/* -------------------------------
+   📱 Mobile Responsive Styles
+--------------------------------- */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .player-container {
+    max-width: 100%;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .song-list, .most-played {
+    width: 100%;
+    max-width: 95%;
+    margin-bottom: 20px;
+  }
+
+  #cover {
+    width: 180px;
+    height: 180px;
+  }
+
+  .controls-row button {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .controls-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .progress-container {
+    height: 8px;
+  }
+
+  #title {
+    font-size: 18px;
+  }
+
+  #timer {
+    font-size: 13px;
+  }
+}

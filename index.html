@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BeatBox Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main-container">
+    
+    <!-- Left: All Songs -->
+    <div class="song-list">
+      <h3>🎵 All Songs</h3>
+      <ul id="songItems"></ul>
+    </div>
+
+    <!-- Center: Player -->
+    <div class="player-container">
+      <h2 id="title">Song Title</h2>
+      <img id="cover" src="images/song1.jpg" alt="Cover Image" />
+      <audio id="audio" src="songs/song1.mp3"></audio>
+      <div id="timer">00:00 / 00:00</div>
+
+      <!-- Controls: Play / Next / Prev / Loop -->
+      <div class="controls-row">
+        <button id="prev">⏮</button>
+        <button id="play">▶️</button>
+        <button id="next">⏭</button>
+        <button id="loop" title="Toggle Loop">🔁</button>
+      </div>
+
+      <!-- Controls: Volume -->
+      <div class="controls-row volume-row">
+        <button id="vol-down">🔉</button>
+        <button id="vol-up">🔊</button>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress" id="progress"></div>
+      </div>
+    </div>
+
+    <!-- Right: Most Played -->
+    <div class="most-played">
+      <h3>🎧 Most Played Songs</h3>
+      <ul id="mostPlayedList"></ul>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
